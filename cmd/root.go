@@ -7,6 +7,7 @@ import (
 	"os"
 	"time"
 
+	"go-web-cli/cmd/version"
 	"go-web-cli/internal/pkg/initialize"
 	"go-web-cli/pkg/biz_name/delivery/http"
 	"go-web-cli/pkg/biz_name/repository"
@@ -120,6 +121,7 @@ func shutdown(ctx context.Context) error {
 // Execute adds all child commands to the root command and sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
+	rootCmd.AddCommand(version.Cmd)
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
