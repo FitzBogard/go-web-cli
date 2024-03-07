@@ -1,0 +1,24 @@
+hertz:
+  bind: :16600
+  read_timeout: 30s
+  write_timeout: 30s
+
+pprof:
+  open: true
+
+metrics:
+  open: true
+  prometheus:
+    namespace: ""
+    subsystem: ""
+    bind: ":9101"
+    url: "/metrics"
+
+redis:
+  - id: 0
+    addr: 127.0.0.1:6379
+    password:
+    db: 0
+
+log:
+  level: info
